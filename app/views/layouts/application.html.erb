@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Untitled1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+</head>
+
+<body>
+<div id="nav_bar">
+  <a href="/" id="home_button">&#8962;</a>
+  <div class="new_story"><%= link_to "Add your story", new_story_path %></div>
+</div>
+<%= yield %>
+</body>
+</html>

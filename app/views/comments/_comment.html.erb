@@ -1,0 +1,13 @@
+<div class="comment_block">
+  <%= comment.user_name %> | <%= time_ago_in_words(comment.created_at) %> ago
+  <br>
+  <strong><%= comment.content %></strong>
+  <br>
+  <a href="#" class="reply_button"> reply </a>
+  <div class="reply_form">
+    <%= render "comments/form", comment: @story.comments.new, parent_id: comment.id %>
+  </div>
+  <div class="child_comments">
+    <%= render comment.comments %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render :partial => 'comments/title_head', locals: { story: @story } %>
+<%= render @story %>
+
+<%= render partial: 'comments/form', locals: { comment: @story.parent_comments.new, parent_id: nil, story: @story } %>
+<ul id="myUL">
+  <% @story.parent_comments.includes(:comments).find_each do |comment| %>
+    <%= render comment %>
+  <% end %>
+</ul>
+<div>
+</div>

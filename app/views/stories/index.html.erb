@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Stories</h1>
+
+<div id="stories">
+  <% @stories.each do |story| %>
+    <div class="story_index">
+      <%= render :partial => 'comments/title_head', locals: { story: story } %>
+      <a href="#" class="hearts" story_id="<%= story.id %>">&hearts;</a>
+      <%= link_to "Read this story", story %>
+    </div>
+  <% end %>
+</div>
+<br>
+<div class="new_story">
+  <%= link_to "Add your story", new_story_path %>
+</div>

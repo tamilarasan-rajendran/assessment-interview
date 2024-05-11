@@ -1,0 +1,11 @@
+<div id="<%= dom_id story %>">
+<p>
+<%= story.title %> <a href="<%= story.url %>" target=”_blank” > (<%= story.url %>) </a>
+  </p>
+
+  <p>
+    created by <strong><%= story.user_name %> </strong> | <%= time_ago_in_words(story.created_at.to_i)%> ago
+    | <%= story.upvotes.to_i %> upvotes
+    | <%= story.comments_count.to_i %> comments
+</p>
+</div>
